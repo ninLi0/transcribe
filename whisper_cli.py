@@ -1,5 +1,3 @@
-# transcribe_whisperx_cli.py
-
 import os
 import whisperx
 import torch
