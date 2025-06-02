@@ -1,4 +1,3 @@
-````markdown
 # WhisperX Transcription CLI
 
 A simple command-line interface (CLI) for transcribing audio files using WhisperX (large-v2 model), performing forced alignment, speaker diarization, and exporting VTT subtitle files. The script reads configuration values (Hugging Face token and output directory) from a `.env` file.
