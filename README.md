@@ -31,7 +31,7 @@ A simple command-line interface (CLI) for transcribing audio files using Whisper
 
 You can install Python dependencies with:
 ```bash
-pip install torch whisperx python-dotenv
+pip install --no-cache-dir -r requirements.txt
 ````
 
 > **Note:**
@@ -48,14 +48,14 @@ pip install torch whisperx python-dotenv
 ├── .env
 ├── models/                      # (auto-created) where WhisperX downloads model weights
 ├── output/                      # (auto-created) where VTT files are saved
-├── transcribe_whisperx_cli.py   # Main CLI script
+├── whisper.py   # Main CLI script
 └── README.md                    # This file
 ```
 
 * **`.env`**:
   Holds environment variables for `HF_TOKEN` and optional `OUTPUT_DIR`.
 
-* **`transcribe_whisperx_cli.py`**:
+* **`whisper.py`**:
   The entry-point script.
 
   * Reads `HF_TOKEN` and `OUTPUT_DIR` from `.env`.
@@ -112,7 +112,7 @@ pip install torch whisperx python-dotenv
 ## Usage
 
 ```bash
-python transcribe_whisperx_cli.py <audio_file> [options]
+python whisper.py <audio_file> [options]
 ```
 
 ### Positional Arguments
@@ -145,7 +145,7 @@ python transcribe_whisperx_cli.py <audio_file> [options]
 > **Example:**
 >
 > ```bash
-> python transcribe_whisperx_cli.py samples/interview.mp3 --device cuda --model_size large-v2 --compute_type float16
+> python whisper.py samples/interview.mp3 --device cuda --model_size large-v2 --compute_type float16
 > ```
 
 ---
@@ -199,7 +199,7 @@ Assuming you have:
 #   HF_TOKEN=hf_xxxyourtokenxxx
 #   OUTPUT_DIR=./my_vtt_folder
 
-python transcribe_whisperx_cli.py interview.mp3 \
+python whisper.py interview.mp3 \
     --device cuda \
     --model_size large-v2 \
     --compute_type float16
@@ -238,7 +238,7 @@ Open `./my_vtt_folder/interview.vtt` in any VTT-compatible player or editor (e.g
 * **Invalid or missing `HF_TOKEN`**
 
   * Verify that your Hugging Face token is correct and has `read` permission for the diarization model.
-  * Double-check your `.env` file is in the same directory as `transcribe_whisperx_cli.py`.
+  * Double-check your `.env` file is in the same directory as `whisper.py`.
 
 * **WhisperX model download errors**
 

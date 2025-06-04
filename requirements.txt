@@ -1,2 +1,11 @@
+# Use CUDA 12.8 nightly wheels for torch, torchvision, torchaudio
+--index-url https://download.pytorch.org/whl/nightly/cu128
+torch==2.8.0.dev20250523+cu128
+torchaudio==2.6.0.dev20250524+cu128
+torchvision==0.22.0.dev20250524+cu128
+
+# Anything not found on the cu128 index (like whisperx or python_dotenv)
+# should be fetched from the default PyPI
+--extra-index-url https://pypi.org/simple
 whisperx==3.3.4
 python_dotenv==1.1.0
