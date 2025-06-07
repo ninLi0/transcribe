@@ -143,6 +143,12 @@ python whisper.py <audio_file> [options]
   * `float16` (FP16, requires GPU)
   * `int8` (quantized, CPU/GPU)
 
+* `--batch_size BATCH_SIZE`
+  Batch size for transcription processing. Default is `16`.
+  
+  * Reduce to `4` if you encounter GPU memory issues
+  * Higher values (e.g., `32`) may improve speed on high-memory GPUs
+  
 > **Example:**
 >
 > ```bash
