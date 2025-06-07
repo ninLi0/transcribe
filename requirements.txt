@@ -9,3 +9,6 @@ torchvision==0.22.0.dev20250524+cu128
 --extra-index-url https://pypi.org/simple
 whisperx==3.3.4
 python_dotenv==1.1.0
+
+# must install this to work - the whisperx forgot to update depedencies
+# ctranslate2==4.5.0

@@ -32,6 +32,7 @@ A simple command-line interface (CLI) for transcribing audio files using Whisper
 You can install Python dependencies with:
 ```bash
 pip install --no-cache-dir -r requirements.txt
+pip install ctranslate2==4.5.0
 ````
 
 > **Note:**

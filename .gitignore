@@ -1,5 +1,5 @@
 models/
 output/
+input/
 .env
-whisper.py
 whisper_mac.py
